@@ -1,18 +1,13 @@
+body {
+  overflow-x: hidden;
+}
 .form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 50px 200px;
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 50px;
+  padding: 50px 150px;
 }
 
 .user-form {
@@ -23,10 +18,19 @@
   gap: 20px;
 }
 
+.user-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+}
+
 .user-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
 }
 
 .input {
@@ -43,6 +47,13 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.input-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .input.image input {
@@ -84,20 +95,66 @@
   padding: 10px 12px;
 }
 
+.update {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.save-btn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  background-color: #3dd67b;
+  border: 1px solid #004d1f;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  padding: 8px 10px;
+}
+
+.cancel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #c9184a;
+  background-color: #ffccd5;
+  border: 1px solid #800f2f;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  padding: 8px 10px;
+}
+
 .submit:hover {
   cursor: pointer;
   transform: translateX(2px);
 }
 
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 100px;
+  padding-top: 20px;
+}
+
 .user-cards {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
   gap: 30px;
   box-sizing: border-box;
-  padding: 100px;
 }
 
 .error {
@@ -108,6 +165,7 @@
 
 .user-card {
   width: 100%;
+  max-height: 425px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -128,6 +186,14 @@
 .user-card p {
   font-size: 22px;
   margin: 0;
+  width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-title {
+  font-weight: 600;
 }
 
 .btn {
@@ -149,5 +215,147 @@
 }
 
 .btn button i {
-  font-size: 24px;
+  font-size: 26px;
+}
+
+.fa-trash,
+.fa-rectangle-xmark {
+  color: red;
+}
+
+.fa-square-check {
+  color: #01df78;
+}
+
+.fa-pen-to-square {
+  color: #24a0ff;
+}
+
+@media (width <= 1080px) {
+  .form {
+    padding: 120px;
+  }
+
+  .user-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+}
+@media (width <= 970px) {
+  .user-input {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .user-info {
+    width: 100%;
+  }
+
+  .input input {
+    width: 450px;
+  }
+}
+
+@media (width <= 900px) {
+  .cards {
+    padding: 70px;
+  }
+
+  .form {
+    padding: 70px;
+  }
+}
+
+@media (width <= 780px) {
+  .cards {
+    padding: 170px;
+    padding-top: 20px;
+  }
+
+  .user-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@media (width <= 750px) {
+  .user-info {
+    align-items: flex-start;
+  }
+
+  .input-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input.image {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+@media (width <= 675px) {
+  .cards {
+    padding: 150px;
+    padding-top: 20px;
+  }
+}
+
+@media (width <= 600px) {
+  .cards {
+    padding: 120px;
+    padding-top: 20px;
+  }
+}
+
+@media (width <= 550px) {
+  .form {
+    padding: 50px;
+  }
+  .cards {
+    padding: 100px;
+    padding-top: 20px;
+  }
+
+  .input input,
+  .input.image input {
+    width: 350px;
+  }
+}
+
+@media (width <= 515px) {
+  .cards {
+    padding: 70px;
+    padding-top: 20px;
+  }
+}
+@media (width <= 460px) {
+  .form {
+    padding: 30px;
+  }
+}
+
+@media (width <= 460px) {
+  .input input,
+  .input.image input {
+    width: 280px;
+  }
+
+  .cards {
+    padding: 50px;
+    padding-top: 20px;
+  }
+}
+
+@media (width <= 410px) {
+  .cards {
+    padding: 30px;
+    padding-top: 20px;
+  }
 }
