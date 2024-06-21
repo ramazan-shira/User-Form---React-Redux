@@ -5,7 +5,6 @@ import { deleteUser, setUserToUpdate, toggleOnEdit } from "./userSlice";
 
 const UserCards = () => {
   const users = useSelector((state) => state.users.users);
-  console.log(users);
 
   const onEdit = useSelector((state) => state.users.onEdit);
 
