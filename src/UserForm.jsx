@@ -83,14 +83,6 @@ const UserForm = () => {
       valid = false;
     } else {
       setNameError("");
-      setFullName(
-        fullname
-          .split(" ")
-          .map(
-            (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-          )
-          .join(" ")
-      );
       valid = true;
     }
 

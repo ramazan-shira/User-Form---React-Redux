@@ -8,14 +8,44 @@ export const userSlice = createSlice({
   },
   reducers: {
     addUser: (state, action) => {
-      state.users.push({
-        id: new Date().getTime(),
-        image: action.payload.image,
-        fullname: action.payload.fullname,
-        age: action.payload.age,
-        email: action.payload.email,
-        expertise: action.payload.expertise,
-      });
+      const foundUser = state.users.find((user) =>
+        user.fullname
+          .toLowerCase()
+          .includes(action.payload.fullname.toLowerCase())
+      );
+
+      if (foundUser) {
+        alert("User exists!");
+      } else {
+        state.users.push({
+          id: new Date().getTime(),
+          image: action.payload.image,
+          fullname: action.payload.fullname
+            .split(" ")
+            .map(
+              (word) =>
+                word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            )
+            .join(" "),
+          age: action.payload.age,
+          email: action.payload.email.toLowerCase(),
+          expertise: action.payload.expertise,
+        });
+      }
+
+      // state.users.push({
+      //   id: new Date().getTime(),
+      //   image: action.payload.image,
+      //   fullname: action.payload.fullname
+      //     .split(" ")
+      //     .map(
+      //       (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+      //     )
+      //     .join(" "),
+      //   age: action.payload.age,
+      //   email: action.payload.email.toLowerCase(),
+      //   expertise: action.payload.expertise,
+      // });
     },
 
     deleteUser: (state, action) => {
