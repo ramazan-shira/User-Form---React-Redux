@@ -32,20 +32,6 @@ export const userSlice = createSlice({
           expertise: action.payload.expertise,
         });
       }
-
-      // state.users.push({
-      //   id: new Date().getTime(),
-      //   image: action.payload.image,
-      //   fullname: action.payload.fullname
-      //     .split(" ")
-      //     .map(
-      //       (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-      //     )
-      //     .join(" "),
-      //   age: action.payload.age,
-      //   email: action.payload.email.toLowerCase(),
-      //   expertise: action.payload.expertise,
-      // });
     },
 
     deleteUser: (state, action) => {
